@@ -17,7 +17,8 @@ Ranked by fit. Prices seen on Coupang, Oct 2026.
    Lay it with the 40 cm side vertical: a 40 cm high, 50 × 60 cm platform.
    Same height/width as ZWIM, 20 cm shorter. Stable, can't puncture, doubles as
    a box for jumps. Bulky to store.
-   Coupang product 8785454056 (search 3 in 1 플라이오메트릭 점핑 박스).
+   [Coupang 8785454056](https://www.coupang.com/vp/products/8785454056)
+   (search 3 in 1 플라이오메트릭 점핑 박스).
 2. **Stackable soft plyo set, 75 × 65 cm footprint, ~₩139k.**
    Closer to the original length; stack layers to reach ~35 cm. Check layer
    heights before buying.

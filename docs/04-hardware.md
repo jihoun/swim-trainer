@@ -2,20 +2,35 @@
 
 ## Parts list
 
-| Qty | Part | Notes | Approx. |
-|---|---|---|---|
-| 1 | **Seeed XIAO ESP32-S3** | Native USB-C (no driver on macOS), built-in LiPo charger | ₩10–15k |
-| 2 | **HX711 breakout** | One per load cell. Switch to 80 Hz (see below) | ₩2–3k each |
-| 2 | **S-type load cell, 50 kg** | Tension rated, threaded ends (M6/M8) | ₩15–25k each |
-| 4 | Eye bolts matching the load cell thread | One each end of each cell | |
-| 4 | Carabiners | Anchor ↔ cell ↔ band | |
-| 1 | LiPo 3.7 V, 500–1000 mAh | JST-PH, solder to XIAO battery pads | ₩5–8k |
-| 1 | Small enclosure | 3D-printed or a project box, hung at the door | |
-| — | Shielded 4-core cable (~1 m ×2), headers, heat-shrink | Load cell → HX711 | |
-| — | USB-C data cable | Charge-only cables are the #1 "Mac can't see board" cause | |
+Coupang links and prices checked on 2026-10-16. Listings change; if one is
+gone, search the Korean term in the last column.
 
-Bands: any swim stretch cords with paddles or handles. You'll calibrate each
-one anyway.
+| Qty | Part | Coupang | Price | Notes / search term |
+|---|---|---|---|---|
+| 1 | **Seeed XIAO ESP32-S3** | [9233076446](https://www.coupang.com/vp/products/9233076446) | ₩18,900 | Genuine Seeed board, native USB-C, LiPo charger. Ships ~11/3 |
+| 2 | **HX711 breakout** | [8449606915](https://www.coupang.com/vp/products/8449606915) | ₩3,480 each | 24-bit load cell amp. Switch to 80 Hz (see below). *HX711 모듈* |
+| 2 | **S-type load cell, 0–50 kg, M8×1.25** | [8863760189](https://www.coupang.com/vp/products/8863760189) | ₩43,640 each | Pick the "0-50kg M8x1.25" option. Alt: [9585874336](https://www.coupang.com/vp/products/9585874336) ₩38,400. *S형 로드셀 50kg* |
+| 4 | **Eye bolts, M8, stainless** | [9220346388](https://www.coupang.com/vp/products/9220346388) | ~₩900 each | Select the M8 option; one each end of each cell. *스텐 아이볼트 M8* |
+| 6 | **Locking carabiners, SUS304** | [8159611966](https://www.coupang.com/vp/products/8159611966) | ₩8,440 / 6 | Screw-lock: anchor ↔ cell ↔ band. *스텐 잠금비너* |
+| 1 | **Door anchor** | [8703031575](https://www.coupang.com/vp/products/8703031575) | ₩7,400 | 1,000+ reviews. Buy two if each band gets its own. *도어앵커* |
+| 2 | **Swim stretch cords with paddles** | [8916139496](https://www.coupang.com/vp/products/8916139496) (20 lb) / [8373410819](https://www.coupang.com/vp/products/8373410819) (30 lb) | ₩22,300 / ₩18,300 | One set has two cords; buy one per resistance level. *수영 스트레치코드* |
+| 1 | **LiPo 3.7 V 1000 mAh** | [8811088847](https://www.coupang.com/vp/products/8811088847) | ₩14,900 | 503450, JST-PH 2.0 lead; solder to the XIAO battery pads, observe polarity |
+| 1 | **Bench: 3-in-1 soft plyo box 40×50×60 cm** | [8785454056](https://www.coupang.com/vp/products/8785454056) | ₩40,250 | See [02-bench.md](02-bench.md) |
+| 1 | Small enclosure | — | — | 3D-printed or a project box, hung at the door |
+| — | Shielded 4-core cable (~1 m ×2), pin headers, heat-shrink | — | — | Load cell → HX711, if the cell's own lead is too short |
+| — | USB-C **data** cable | — | — | Charge-only cables are the #1 "Mac can't see board" cause |
+
+**Electronics total ≈ ₩140k** (dominated by the two S-type load cells), plus
+≈ ₩80k for bench, cords and anchor.
+
+**Cheaper/faster board alternative:** ESP32-S3 Super Mini,
+[9458962970](https://www.coupang.com/vp/products/9458962970), ₩13,500, next-day
+delivery. It works, but it has no battery charger and different pin labels:
+use GPIO numbers in `config.h` (GPIO1–4 match the wiring below) and run it from
+a USB power bank.
+
+Bands: you'll calibrate each cord anyway, so brand doesn't matter. Prefer
+latex tubing with a protective sleeve and paddle-style handles.
 
 ## HX711 at 80 Hz
 
