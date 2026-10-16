@@ -41,18 +41,21 @@ firmware's `rate` command (it prints measured samples/s).
 
 ## Wiring
 
+![Wiring for one side: S-type load cell, HX711 and XIAO ESP32-S3](img/wiring-one-side.svg)
+
+
 Both HX711s share 3.3 V and GND, each has its own DOUT/SCK pair.
 
 | XIAO pin | GPIO | Connects to |
 |---|---|---|
 | 3V3 | — | HX711 L VCC, HX711 R VCC (and VDD if separate) |
 | GND | — | HX711 L GND, HX711 R GND |
-| D0 | GPIO1 | HX711 **L** DOUT |
-| D1 | GPIO2 | HX711 **L** SCK |
-| D2 | GPIO3 | HX711 **R** DOUT |
-| D3 | GPIO4 | HX711 **R** SCK |
+| D0 | GPIO1 | HX711 **L** SCK |
+| D1 | GPIO2 | HX711 **L** DT (DOUT) |
+| D2 | GPIO3 | HX711 **R** SCK |
+| D3 | GPIO4 | HX711 **R** DT (DOUT) |
 
-Load cell → HX711 (typical colour code, verify on your cell's label):
+Load cell → HX711 (colour code from the 8863760189 listing; verify on your cell's label):
 
 | Load cell wire | HX711 |
 |---|---|
@@ -60,8 +63,10 @@ Load cell → HX711 (typical colour code, verify on your cell's label):
 | Black (Exc−) | E− |
 | Green (Sig+) | A+ |
 | White (Sig−) | A− |
+| Bare / grey shield | GND |
 
-If force reads negative when pulling, swap A+ and A−, or flip the sign in
+The seller notes green and white swap when the cell is used in tension (pulled),
+which is how we use it. If force reads negative when pulling, swap A+ and A−, or flip the sign in
 `config.h` (`kSignLeft` / `kSignRight`).
 
 Pins are defined in `firmware/src/config.h`.

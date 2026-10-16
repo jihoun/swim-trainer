@@ -4,10 +4,11 @@
 #include "StrokeDetector.h"
 
 // ---- Pins (Seeed XIAO ESP32-S3) ------------------------------------------
-constexpr uint8_t kPinLeftDout = D0;   // GPIO1
-constexpr uint8_t kPinLeftSck = D1;    // GPIO2
-constexpr uint8_t kPinRightDout = D2;  // GPIO3
-constexpr uint8_t kPinRightSck = D3;   // GPIO4
+// See docs/img/wiring-one-side.svg: SCK on D0/D2 and DT on D1/D3 keeps the wires uncrossed.
+constexpr uint8_t kPinLeftSck = D0;    // GPIO1
+constexpr uint8_t kPinLeftDout = D1;   // GPIO2
+constexpr uint8_t kPinRightSck = D2;   // GPIO3
+constexpr uint8_t kPinRightDout = D3;  // GPIO4
 
 // Flip to -1 if a side reads negative when pulling.
 constexpr float kSignLeft = 1.0f;
