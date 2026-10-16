@@ -1,0 +1,7 @@
+{
+  "name": "swimpower",
+  "version": "0.1.0",
+  "description": "Hardware-independent swim power math: band model, stroke detection, power combiner, BLE CPS packet",
+  "frameworks": "*",
+  "platforms": "*"
+}
